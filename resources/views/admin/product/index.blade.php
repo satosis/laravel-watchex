@@ -34,7 +34,7 @@
                 </thead>
                 @foreach($product as $key => $list )
                     <tbody>
-                    <td>{{ (Request::get('page') ?? 1 - 1) * 10 + $key + 1 }}</td>
+                    <td>{{ ((Request::get('page') ?? 1) - 1) * 10 + $key + 1 }}</td>
                     <td>{{ $list->pro_name}}</td>
                     <td>{{ $list->pro_price}}</td>
                     <td>{{ $list->pro_sale}}</td>
