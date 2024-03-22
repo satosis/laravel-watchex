@@ -32,9 +32,9 @@
                 <td>View</td>
                 <td>Action</td>
                 </thead>
-                @foreach($product as $list )
+                @foreach($product as $key => $list )
                     <tbody>
-                    <td>{{ $list->id}}</td>
+                    <td>{{ (Request::get('page') ?? 1 - 1) * 10 + $key + 1 }}</td>
                     <td>{{ $list->pro_name}}</td>
                     <td>{{ $list->pro_price}}</td>
                     <td>{{ $list->pro_sale}}</td>

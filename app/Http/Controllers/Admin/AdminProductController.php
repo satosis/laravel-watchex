@@ -16,7 +16,7 @@ class AdminProductController extends Controller
 {
     public function index()
     {
-        $product = Product::paginate(10);
+        $product = Product::orderBy('id', 'DESC')->paginate(10);
         $category = Category::all();
         $viewData = [
             'product' => $product,
@@ -37,12 +37,12 @@ class AdminProductController extends Controller
 
     public function store(AdminRequestProduct $request)
     {
-        $data = $request->except('_token', 'pro_avatar', 'attribute', 'keywords');
+        $data = $request->except('_token', 'thumbnail_stage', 'attribute', 'keywords');
         $data['pro_admin_id'] = get_data_user('admins', 'id');
         $data['pro_slug'] = Str::slug($data['pro_name']);
         $data['created_at'] = Carbon::now();
-        if ($request->pro_avatar) {
-            $image = upload_image('pro_avatar');
+        if ($request->thumbnail_stage) {
+            $image = upload_image('thumbnail_stage');
             if ($image['code'] == 1)
                 $data['pro_avatar'] = $image['name'];
 
@@ -130,11 +130,11 @@ class AdminProductController extends Controller
     public function update(AdminRequestProduct $request, $id)
     {
         $product = Product::find($id);
-        $data = $request->except("_token", 'pro_avatar', 'attribute', 'keywords', 'file');
+        $data = $request->except("_token", 'thumbnail_stage', 'attribute', 'keywords', 'file');
         $data['pro_slug'] = Str::slug($request->pro_name);
         $data['updated_at'] = Carbon::now();
-        if ($request->pro_avatar) {
-            $image = upload_image('pro_avatar');
+        if ($request->thumbnail_stage) {
+            $image = upload_image('thumbnail_stage');
             if ($image['code'] == 1) {
                 $data['pro_avatar'] = $image['name'];
             }
