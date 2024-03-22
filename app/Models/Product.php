@@ -29,12 +29,41 @@ class Product extends Model
     public function favourite(){
         return $this->belongsToMany(User::class,'user_favourite','uf_product_id','uf_user_id');
     }
- 
+
     public function getProAvatarAttribute(){
         return pare_url_file($this->attributes['pro_avatar']);
     }
- 
+
     public function getStarAttribute(){
         return $this->attributes['pro_review_total'] > 0 ? (int)(($this->attributes['pro_review_star'] - 5 ) / $this->attributes['pro_review_total']) : $this->attributes['pro_review_star'];
     }
-}   
+
+    public function images(){
+        return $this->hasMany(ProductImage::class, 'product_id');
+    }
+    public function orders(){
+        return $this->belongsTo(Order::class, 'od_product_id');
+    }
+
+    public function keywords(){
+        return $this->belongsTo(ProductKeyword::class, 'pk_product_id');
+    }
+
+    public function ratings(){
+        return $this->belongsTo(Rating::class, 'r_product_id');
+    }
+
+    public function favourites(){
+        return $this->belongsTo(UserFavourite::class, 'uf_product_id');
+    }
+
+    protected static function booted () {
+        static::deleting(function(Product $product) {
+             $product->orders()->delete();
+             $product->images()->delete();
+             $product->keywords()->delete();
+             $product->ratings()->delete();
+             $product->favourites()->delete();
+        });
+    }
+}
