@@ -33,7 +33,7 @@ class AdminRequestCategory extends FormRequest
     public function rules()
     {
         return [
-            'c_name'            => 'required|min:5|max:50|unique:category,c_name,'.$this->id,
+            'c_name'            => 'required|min:3|max:50|unique:category,c_name,'.$this->id,
             'c_cate'            => 'required'
         ];
     }
