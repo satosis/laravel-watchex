@@ -3,9 +3,12 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use Illuminate\Http\Request;
 
 class AdminRequestCategory extends FormRequest
 {
+    protected $id;
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -16,6 +19,12 @@ class AdminRequestCategory extends FormRequest
         return true;
     }
 
+
+    public function __construct(Request $request)
+    {
+        $this->id = (integer) $request->route()->id;
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,7 +33,7 @@ class AdminRequestCategory extends FormRequest
     public function rules()
     {
         return [
-            'c_name'            => 'required|min:5|max:50|unique:category,c_name',
+            'c_name'            => 'required|min:5|max:50|unique:category,c_name,'.$this->id,
             'c_cate'            => 'required'
         ];
     }

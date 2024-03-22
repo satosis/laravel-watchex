@@ -31,9 +31,9 @@
                     <label for="exampleInputPassword1">Thể loại</label>
                     <select name="c_cate" class="form-control" id="exampleInputPassword1">
                         <option value="">--Chọn thể loại sản phẩm--</option>
-                        <option value="watch">Đồng hồ chính hãng</option>
-                        <option value="glass">Kính mắt thời trang</option>
-                        <option value="accessories">Phụ kiện đồng hồ</option>
+                        <option value="watch" @if($category->c_cate == 'watch') selected @endif>Đồng hồ chính hãng</option>
+                        <option value="glass" @if($category->c_cate == 'glass') selected @endif>Kính mắt thời trang</option>
+                        <option value="accessories" @if($category->c_cate == 'accessories') selected @endif>Phụ kiện đồng hồ</option>
 
                     </select>
                     @if ($errors->first('c_cate'))
