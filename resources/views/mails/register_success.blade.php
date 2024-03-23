@@ -14,7 +14,7 @@
         <p>Mời bạn <a href="{{ route('get.user.profile') }}">click vào đây</a> để cập nhật thông tin cá nhân</p>
     </div>
     <div style="background: #f4f5f5;box-sizing: border-box;padding: 15px">
-        <p style="margin:2px 0;color: #333">Email : hung0913003358@gmail.com</p>
+        <p style="margin:2px 0;color: #333">Email : admin@support.com</p>
         <p style="margin:2px 0;color: #333">Phone : 08789428091</p>
     </div>
 </div>
