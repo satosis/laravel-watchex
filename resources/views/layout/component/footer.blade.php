@@ -56,7 +56,6 @@
             </div>
         </div>
         <div class="bot">
-            <p class="fRobotoB pb5 fs16">Nguyen Hung</p>
             <h4 class="lh21">
                 Nhà phân phối độc quyền các thương hiệu đồng hồ, kính mắt, bút ký nổi tiếng thế giới: Epos Swiss,
                 Atlantic Swiss, Diamond D, Philippe Auguste, Jacques Lemans, Citizen, Aries Gold, dây da đồng hồ, dây
@@ -68,7 +67,7 @@
 <div id="commonBot">
     <div class="wrp">
         <div class="left">
-            Copyright © 2008-2020 Nguyen Hung.
+            Copyright © 2008-2020 Shop đồng hồ.
         </div>
     </div>
 </div>
