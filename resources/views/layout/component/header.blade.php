@@ -171,7 +171,7 @@
             </a>
             <a href="{{ route('get.shopping.index')}}" class="btnCart">
                 <i class="fa fa-shopping-cart"></i>
-                <span class="number">{{  Cart::count() }}</span> 
+                <span class="number">{{  Cart::count() }}</span>
             </a>
         </div>
     </div>
